@@ -1,0 +1,214 @@
+body {
+    background-image: url(../img/fundo-zap-padrao.png);
+    background-size: cover;
+    font-family: "Helvetica";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Cabeçalho*/
+.container-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Menu*/
+
+.botao-menu {
+    padding: 8px;
+    border: 1px solid #f0f2f5;
+    color: #3b4a54;
+    text-decoration: none;
+    font-family: "Segoe UI";
+}
+
+.botao-menu:hover {
+    color: #25d366;
+    background: #f0f2f5;
+    transition: 0.2s;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 360px;
+}
+
+/*Formulário principal do site*/
+.container-centro {
+    display: flex;
+
+}
+
+.formulario {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.campo-numero {
+    padding: 14px;
+    margin: 8px;
+    width: 90%;
+    color: #111b21;
+    background-color: #ffffff;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    outline: 0;
+    font-family: "Helvetica";
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.campo-mensagem {
+    padding: 8px;
+    margin: 8px;
+    width: 90%;
+    height: 180px;
+    font-family: "Calibri";
+    color: #111b21;
+    background-color: #ffffff;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    border-radius: 8px;
+}
+
+.campo-mensagem:hover {
+    border-color: solid 2px #25d366;
+}
+
+::-webkit-input-placeholder {
+    color: silver;
+    font-family: "Segoe UI";
+}
+
+
+.caixa-cinza {
+    background: #f0f2f5;
+    border-radius: 8px;
+    margin: 8px;
+    width: 660px;
+}
+
+.campo-link {
+    padding: 16px;
+    margin: 8px;
+    width: 90%;
+    background-color: #ffffff;
+    color: #3b4a54;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    font-family: "Helvetica";
+}
+
+.campo-link:hover {
+    border-color: solid 2px #25d366;
+}
+
+/*Seção dos botões*/
+.btn {
+	text-align: center;
+	width: 250px;
+	cursor: pointer;
+    margin: 8px;
+}
+
+.btn-one {
+	color: #25d366;
+    background-color: #f0f2f5;
+	transition: all 0.3s;
+	position: relative;
+    font-family: "Helvetica";
+    font-style: bolder;
+}
+
+.btn-one span {
+	transition: all 0.3s;
+}
+
+.btn-one::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #25d366;
+	border-bottom-color: #25d366;
+	transform: scale(0.1, 1);
+}
+.btn-one:hover span {
+	letter-spacing: 2px;
+    color: #3b4a54;
+}
+.btn-one:hover::before {
+	opacity: 1;	
+	transform: scale(1, 1);	
+}
+.btn-one::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.3s;
+	background-color: rgba(255,255,255,0.1);
+}
+.btn-one:hover::after {
+	opacity: 0;	
+	transform: scale(0.1, 1);
+    background-color: silver;
+}
+
+/*Rodapé*/
+.rodape {
+    text-align: center;
+    align-items: center;
+    color: #25d366;
+    background: #f0f2f5;
+    width: 100%;
+    bottom: 0;
+}
+
+.rodape:hover {
+    backdrop-filter: blur(200px);
+}
+
+.texto-rodape {
+    padding-top: 8px;
+    opacity: 100%;
+}

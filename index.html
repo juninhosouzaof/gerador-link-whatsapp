@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vemdezap - Gerador de link para conversas no WhatsApp</title>
+    <link rel="shortcut icon" href="img/favicon-vemdezap.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+    <div class="container-img">
+        <img src="img/logo-vemdezap.png" alt="Logo Vem de Zap">
+    </div>
+
+
+    <nav class="menu">
+        
+        <a class="botao-menu" href="sobre.html">SOBRE</a>
+
+        <a class="botao-menu" href="https://www.juninhoweb.com.br" target="_blank">CONTATO</a>
+    </nav>
+
+
+    <div class="container-link">
+
+
+    </div>
+
+    
+
+    <!--Formulário principal do site-->
+    <div class="container-centro">
+
+        <form name="formulario" class="formulario" autocomplete="off">
+
+            <!--Área para inserir o número a ser contatado-->
+            <div class="caixa-cinza">
+                <input type="number" name="numero" id="numero" class="campo-numero" placeholder="Nº de contato">
+
+
+            <!--Área para digitar a mensagem a ser enviada-->
+             
+                <textarea type="text" name="mensagem" id="mensagem" wrap="hard" class="campo-mensagem" placeholder="Mensagem"></textarea>
+                </div>
+
+                
+                    <div type="button" onclick="gerarLink()" class="btn-one btn"><span>Gerar link</span></div>
+
+                    <div type="button" onclick="abrirLinkComMensagem()" class="btn-one btn"><span>Abrir conversa</span></div>
+                
+
+                <!--Exibição do link pronto-->
+                <div class="caixa-cinza">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+                        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+                      </svg>
+
+                    <input type="text" id="linkPronto" class="campo-link"></input>
+                </div>
+        </form>
+
+    </div>
+
+
+    <footer class="rodape">
+        <p class="texto-rodape">&copy; 2022 JNWeb. Todos os direitos reservados. </p>
+    </footer>
+
+
+    <script>
+
+        /*Regex*/
+        function phoneValidate($phone)
+    {
+        $regex = '/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/';
+
+        if (preg_match($regex, $phone) == false) {
+
+            // O número não foi validado.
+            return false;
+        } else {
+
+            // Telefone válido.
+            return true;
+        }        
+    }
+
+    let contatoCel = document.getElementById('numero').value;
+
+    phoneValidate(contatoCel);
+
+        /*Função Gerar Link*/
+        function gerarLink() {
+
+            var numero = document.getElementById('numero').value;
+
+            var mensagem = document.getElementById('mensagem').value;
+
+            var url_base = "https://api.whatsapp.com/send?phone=";
+
+            var urlCompletaComTexto = url_base + numero + '&text=' + mensagem;
+
+            document.getElementById("linkPronto").value = urlCompletaComTexto;
+
+        }
+
+
+        /*Função Abrir link em uma nova aba com a mensagem já digitada no WhatsApp Web*/
+        function abrirLinkComMensagem() {
+
+            var numero = document.getElementById('numero').value;
+
+            var mensagem = document.getElementById('mensagem').value;
+
+            var url_base = "https://api.whatsapp.com/send?phone=";
+
+            var urlCompletaComTexto = url_base + numero + '&text=' + mensagem;
+
+
+            window.open(urlCompletaComTexto);
+
+
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
