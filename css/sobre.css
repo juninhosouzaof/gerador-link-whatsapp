@@ -8,20 +8,36 @@ body {
     align-items: center;
 }
 
+/*Barra de rolagem*/
+body::-webkit-scrollbar {
+    width: 6px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #ffffff;        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: silver;
+    border-radius: 2px;       /* roundness of the scroll thumb */
+  }
+
 /*Menu*/
 
 .botao-menu {
     padding: 8px;
-    border: 1px solid #f0f2f5;
-    color: #3b4a54;
+    margin: 16px 0 16px 0;
+    border: 1px solid silver;
+    color: silver;
     text-decoration: none;
-    font-family: "Segoe UI";
-    margin-bottom: 32px;
+    font-family: "Helvetica";
+    font-size: 12px;
 }
 
 .botao-menu:hover {
     color: #25d366;
-    background: #f0f2f5;
+    background: #3b4a54;
+    border: 1px solid #25d366;
     transition: 0.2s;
 }
 
@@ -34,8 +50,10 @@ body {
 }
 
 img {
-    width: 360px;
+    width: 160px;
+    margin-top: 40px;
 }
+
 .container-centro {
     color: #25d366;
     align-items: center;
@@ -93,7 +111,7 @@ img {
     margin-top: 32px;
     text-align: center;
     align-items: center;
-    color: #25d366;
+    color: silver;
     background: #f0f2f5;
     width: 100%;
     bottom: 0;

@@ -1,3 +1,326 @@
+/*Interface Desktop*/
+body {
+    background-image: url(../img/fundo-zap-padrao.png);
+    background-size: cover;
+    font-family: "Helvetica";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Barra de rolagem*/
+body::-webkit-scrollbar {
+    width: 6px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #ffffff;        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: silver;
+    border-radius: 2px;       /* roundness of the scroll thumb */
+  }
+
+/*Cabeçalho*/
+.container-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Menu*/
+
+.botao-menu {
+    padding: 8px;
+    margin: 16px 0 16px 0;
+    border: 1px solid silver;
+    color: silver;
+    text-decoration: none;
+    font-family: "Helvetica";
+    font-size: 12px;
+}
+
+.botao-menu:hover {
+    color: #25d366;
+    background: #3b4a54;
+    border: 1px solid #25d366;
+    transition: 0.2s;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 160px;
+    margin-top: 40px;
+}
+
+/*Formulário principal do site*/
+.container-centro {
+    display: flex;
+
+}
+
+.formulario {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.campo-numero {
+    padding: 8px;
+    margin: 8px;
+    width: 90%;
+    color: #111b21;
+    background-color: #ffffff;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    outline: 0;
+    font-family: "Segoe UI";
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.campo-mensagem {
+    padding: 8px;
+    margin: 8px;
+    width: 95%;
+    height: 180px;
+    font-family: "Segoe UI";
+    color: #111b21;
+    background-color: #ffffff;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    border-radius: 8px;
+}
+
+.campo-mensagem:hover {
+    border-color: solid 2px #25d366;
+}
+
+::-webkit-input-placeholder {
+    color: silver;
+    font-family: "Segoe UI";
+}
+
+
+.caixa-cinza-numero {
+    background: #f0f2f5;
+    border-radius: 8px;
+    margin: 4px;
+    width: 850px;
+    height: 60px;
+}
+
+.caixa-cinza-mensagem {
+    background: #f0f2f5;
+    border-radius: 8px;
+    margin: 4px;
+    width: 850px;
+    height: 260px;
+}
+
+.caixa-cinza-link {
+    background: #f0f2f5;
+    border-radius: 8px;
+    margin: 4px;
+    width: 850px;
+}
+
+.campo-link {
+    padding: 16px;
+    margin: 8px;
+    width: 75%;
+    background-color: #ffffff;
+    color: #3b4a54;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    font-family: "Helvetica";
+}
+
+.campo-link:hover {
+    border-color: solid 2px #25d366;
+}
+
+/*Botão copiar*/
+
+.botao-copiar {
+	color: #3b4a54;
+    background-color: #f0f2f5;
+	transition: all 0.3s;
+	position: relative;
+    font-family: "Helvetica";
+    font-style: bolder;
+    border: none;
+    border-radius: 4px;
+}
+
+.botao-copiar span {
+	transition: all 0.3s;
+}
+
+.botao-copiar::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #25d366;
+	border-bottom-color: #25d366;
+	transform: scale(0.1, 1);
+}
+.botao-copiar:hover span {
+	letter-spacing: 2px;
+    color: #25d366;
+}
+.botao-copiar:hover::before {
+	opacity: 1;	
+	transform: scale(1, 1);	
+}
+.botao-copiar::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.3s;
+	background-color: rgba(255,255,255,0.1);
+}
+.botao-copiar:hover::after {
+	opacity: 0;	
+	transform: scale(0.1, 1);
+    background-color: silver;
+}
+
+
+/*Seção dos botões*/
+.btn {
+	text-align: center;
+	width: 160px;
+	cursor: pointer;
+    margin: 8px;
+}
+
+.btn-one {
+	color: #3b4a54;
+    background-color: #f0f2f5;
+	transition: all 0.3s;
+	position: relative;
+    font-family: "Segoe UI";
+    font-style: bolder;
+    font-size: 16px;
+    height: 40px;
+    width: 180px;
+}
+
+.btn-one span {
+	transition: all 0.3s;
+}
+
+.btn-one::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+    font-size: 16px;
+    height: 40px;
+    width: 180px;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #25d366;
+	border-bottom-color: #25d366;
+	transform: scale(0.1, 1);
+}
+.btn-one:hover span {
+	letter-spacing: 2px;
+    color: #25d366;
+    font-size: 16px;
+    height: 60px;
+    width: 240px;
+}
+.btn-one:hover::before {
+	opacity: 1;	
+	transform: scale(1, 1);	
+}
+.btn-one::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.3s;
+	background-color: rgba(255,255,255,0.1);
+}
+.btn-one:hover::after {
+	opacity: 0;	
+	transform: scale(0.1, 1);
+    background-color: silver;
+}
+
+/*Rodapé*/
+.rodape {
+    text-align: center;
+    align-items: center;
+    color: silver;
+    background: #f0f2f5;
+    width: 100%;
+    bottom: 0;
+    margin-top: 40px;
+}
+
+.rodape:hover {
+    backdrop-filter: blur(200px);
+}
+
+.texto-rodape {
+    padding-top: 8px;
+    opacity: 100%;
+}
+
+/*Interface Mobile Samsung Galaxy S20 FE 1080 x 2400*/
+@media screen and (max-width: 600px) {
+
+/*Interface Desktop*/
 body {
     background-image: url(../img/fundo-zap-padrao.png);
     background-size: cover;
@@ -41,7 +364,7 @@ body {
 }
 
 img {
-    width: 360px;
+    width: 220px;
 }
 
 /*Formulário principal do site*/
@@ -57,9 +380,9 @@ img {
 }
 
 .campo-numero {
-    padding: 14px;
+    padding: 10px;
     margin: 8px;
-    width: 90%;
+    width: 320px;
     color: #111b21;
     background-color: #ffffff;
     font-size: 16px;
@@ -83,7 +406,7 @@ input[type=number] {
 .campo-mensagem {
     padding: 8px;
     margin: 8px;
-    width: 90%;
+    width: 380px;
     height: 180px;
     font-family: "Calibri";
     color: #111b21;
@@ -104,18 +427,26 @@ input[type=number] {
     font-family: "Segoe UI";
 }
 
-
-.caixa-cinza {
+.caixa-cinza-numero {
     background: #f0f2f5;
     border-radius: 8px;
     margin: 8px;
-    width: 660px;
+    width: 410px;
+}
+
+
+.caixa-cinza-mensagem {
+    background: #f0f2f5;
+    border-radius: 8px;
+    margin: 8px;
+    width: 410px;
+    height: 210px;
 }
 
 .campo-link {
-    padding: 16px;
+    padding: 8px;
     margin: 8px;
-    width: 90%;
+    width: 200px;
     background-color: #ffffff;
     color: #3b4a54;
     font-size: 16px;
@@ -130,10 +461,78 @@ input[type=number] {
     border-color: solid 2px #25d366;
 }
 
+.caixa-cinza-link {
+    background: #f0f2f5;
+    border-radius: 8px;
+    margin: 8px;
+    width: 410px;
+}
+
+/*Botão copiar*/
+
+.botao-copiar {
+	color: #3b4a54;
+    background-color: #f0f2f5;
+	transition: all 0.3s;
+	position: relative;
+    font-family: "Helvetica";
+    font-style: bolder;
+    border: 1px solid #25d366;
+    border-radius: 4px;
+}
+
+.botao-copiar span {
+	transition: all 0.3s;
+}
+
+.botao-copiar::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #25d366;
+	border-bottom-color: #25d366;
+	transform: scale(0.1, 1);
+}
+.botao-copiar:hover span {
+	letter-spacing: 2px;
+    color: #3b4a54;
+}
+.botao-copiar:hover::before {
+	opacity: 1;	
+	transform: scale(1, 1);	
+}
+.botao-copiar::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.3s;
+	background-color: rgba(255,255,255,0.1);
+}
+.botao-copiar:hover::after {
+	opacity: 0;	
+	transform: scale(0.1, 1);
+    background-color: silver;
+}
+
+
 /*Seção dos botões*/
 .btn {
 	text-align: center;
-	width: 250px;
+	width: 180px;
 	cursor: pointer;
     margin: 8px;
 }
@@ -198,10 +597,11 @@ input[type=number] {
 .rodape {
     text-align: center;
     align-items: center;
-    color: #25d366;
+    color: silver;
     background: #f0f2f5;
     width: 100%;
     bottom: 0;
+    margin-top: 40px;
 }
 
 .rodape:hover {
@@ -211,4 +611,6 @@ input[type=number] {
 .texto-rodape {
     padding-top: 8px;
     opacity: 100%;
+}
+
 }
